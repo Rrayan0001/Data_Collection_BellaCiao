@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bella Ciao Data Collection
 
-## Getting Started
+A responsive, high-aesthetic customer feedback and data collection application themed after "Money Heist" (Bella Ciao). This project features a clean White & Red "Pop" design, fluid animations, and a comprehensive Admin Dashboard.
 
-First, run the development server:
+## 🎨 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Thematic UI**: "Money Heist" inspired design with a professional White & Black palette and Netflix Red accents.
+- **Feedback System**: 5-Star rating with interactive tags (Great Food, Cool Vibe, etc.) and open feedback text area.
+- **Animations**: Fluid entrance and success animations using `framer-motion`.
+- **Mobile First**: Optimized layout for all devices.
+- **Admin Dashboard**: Secure panel to view, search, filter, and export data.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Database**: PostgreSQL (via [Prisma ORM](https://www.prisma.io/))
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Getting Started
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js installed
+- A PostgreSQL database (e.g., Neon, Supabase)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/Rrayan0001/Data_Collection_BellaCiao.git
+    cd Data_Collection_BellaCiao
+    ```
 
-## Deploy on Vercel
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3.  **Configure Environment Variables**:
+    Create a `.env` file in the root directory and add:
+    ```env
+    DATABASE_URL="your_postgresql_connection_string"
+    ADMIN_PASS="bella123" # Set your desired admin password
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4.  **Sync Database**:
+    ```bash
+    npx prisma db push
+    ```
+
+5.  **Run Development Server**:
+    ```bash
+    npm run dev
+    ```
+
+Open [http://localhost:3000](http://localhost:3000) (or the port specified) to view the app.
+
+## 🔐 Admin Access
+
+- **URL**: `/admin-login`
+- **Default Password**: `bella123` (Change this in `.env`)
+
+The Admin Dashboard allows you to:
+- View all guest entries.
+- Search by Name or Phone.
+- Filter by Date (Today, This Week).
+- Export data to CSV.
+
+## 📂 Project Structure
+
+- `app/page.tsx`: Main customer data collection form.
+- `app/admin/`: Protected admin dashboard.
+- `app/api/`: API routes for submission, auth, and data retrieval.
+- `prisma/schema.prisma`: Database schema definition.
+
+## 📄 License
+
+All rights reserved to Bella Ciao Restaurant.
+Powered by Margros.
