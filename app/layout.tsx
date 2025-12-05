@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -18,15 +18,16 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Restaurant Guest Entry",
-  description: "Guest data collection for our restaurant",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
-  themeColor: "#221F1A",
+  title: "Bella Ciao | Data Collection",
+  description: "Guest data collection for Bella Ciao Restaurant",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: "#FFFFFF",
 };
 
 export default function RootLayout({
@@ -44,3 +45,4 @@ export default function RootLayout({
     </html>
   );
 }
+
